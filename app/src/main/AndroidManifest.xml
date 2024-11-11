@@ -26,6 +26,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".DisplayMeetingActivity" />
+        <activity android:name=".SearchActivity" />
 
     </application>
 
