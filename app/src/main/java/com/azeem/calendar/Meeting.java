@@ -1,6 +1,7 @@
 package com.azeem.calendar;
+import java.io.Serializable;
 
-public class Meeting {
+public class Meeting implements Serializable {
     private String title;
     private String place;
     private String participants;

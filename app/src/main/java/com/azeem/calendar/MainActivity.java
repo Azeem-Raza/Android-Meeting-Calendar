@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Start DisplayMeetingActivity with meeting details
         Intent intent = new Intent(MainActivity.this, DisplayMeetingActivity.class);
-        //intent.putExtra("meeting", meeting);
+        intent.putExtra("meeting", meeting);
         startActivity(intent);
     }
 }
