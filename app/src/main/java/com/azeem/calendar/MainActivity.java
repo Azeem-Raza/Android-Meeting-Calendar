@@ -57,6 +57,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void submitMeeting() {
+        String title = etTitle.getText().toString();
+        String place = etPlace.getText().toString();
+        String participants = etParticipants.getText().toString();
 
+        Meeting meeting = new Meeting(title, place, participants, date, time);
+
+        // Start DisplayMeetingActivity with meeting details
+        Intent intent = new Intent(MainActivity.this, DisplayMeetingActivity.class);
+        //intent.putExtra("meeting", meeting);
+        startActivity(intent);
     }
 }
