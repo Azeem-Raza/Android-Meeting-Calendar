@@ -13,7 +13,7 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
     private EditText etTitle, etPlace, etParticipants;
-    private Button btnPickDate, btnPickTime, btnSubmit;
+    private Button btnPickDate, btnPickTime, btnSubmit, btnSearch;
     private String date = "", time = "";
 
     @Override
@@ -32,9 +32,19 @@ public class MainActivity extends AppCompatActivity {
         btnPickTime.setOnClickListener(view -> showTimePickerDialog());
 
         btnSubmit.setOnClickListener(view -> submitMeeting());
+        Button btnSearch = findViewById(R.id.btnSearch);
+        btnSearch.setOnClickListener(view -> openSearchActivity());
+
 
         // Set up buttons for Summary, Search, and Update to start respective activities
+
+
     }
+    private void openSearchActivity() {
+        Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+        startActivity(intent);
+    }
+
 
     private void showDatePickerDialog() {
         Calendar calendar = Calendar.getInstance();
@@ -67,5 +77,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, DisplayMeetingActivity.class);
         intent.putExtra("meeting", meeting);
         startActivity(intent);
+        // Add the meeting to storage
+        MeetingStorage.addMeeting(meeting);
+
     }
 }
