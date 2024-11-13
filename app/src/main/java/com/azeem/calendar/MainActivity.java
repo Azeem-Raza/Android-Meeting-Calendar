@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         btnSubmit = findViewById(R.id.btnSubmit);
         btnSummary = findViewById(R.id.btnSummary);
         btnUpdate = findViewById(R.id.btnUpdate);
+        btnSearch = findViewById(R.id.btnSearch);
+
 
         // Date and Time Pickers
         btnPickDate.setOnClickListener(view -> showDatePickerDialog());
