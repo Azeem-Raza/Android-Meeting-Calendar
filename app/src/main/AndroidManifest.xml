@@ -27,6 +27,7 @@
         </activity>
         <activity android:name=".DisplayMeetingActivity" />
         <activity android:name=".SearchActivity" />
+        <activity android:name=".UpdateActivity" />
 
     </application>
 
