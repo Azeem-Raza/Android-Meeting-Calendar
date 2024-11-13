@@ -1,5 +1,6 @@
 package com.azeem.calendar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -16,8 +17,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-
 
 public class SearchActivity extends AppCompatActivity {
     private EditText etSearchDate, etSearchTime, etSearchParticipants;
@@ -43,6 +42,13 @@ public class SearchActivity extends AppCompatActivity {
 
         // Set up Search button
         btnSearch.setOnClickListener(view -> searchMeetings());
+
+        // Set up the click listener for each meeting item
+        meetingAdapter.setOnItemClickListener(selectedMeeting -> {
+            Intent intent = new Intent(SearchActivity.this, UpdateActivity.class);
+            intent.putExtra("meeting", selectedMeeting); // Pass the selected meeting to UpdateActivity
+            startActivity(intent);
+        });
     }
 
     private void searchMeetings() {
@@ -100,6 +106,4 @@ public class SearchActivity extends AppCompatActivity {
         // Update the adapter with the filtered list of meetings
         meetingAdapter.updateMeetings(filteredMeetings);
     }
-
 }
-
