@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         btnSearch.setOnClickListener(view -> openSearchActivity());
         btnSummary.setOnClickListener(view -> openDisplayMeetingActivity());
         btnUpdate.setOnClickListener(view -> openUpdateActivity());
+
     }
 
     // Open Search Activity
